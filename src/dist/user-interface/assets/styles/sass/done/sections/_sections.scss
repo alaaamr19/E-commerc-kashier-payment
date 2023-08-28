@@ -1,0 +1,32 @@
+.section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.section-header {
+  min-height: 100vh;
+  padding-top: 120px;
+  .section-header-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    z-index: -1;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+  .section-header-content {
+    padding-top: 3rem;
+  }
+}
+
+@import "demo";
+@import "header-animated";
