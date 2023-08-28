@@ -31,7 +31,6 @@ router.get("/:id", auth, async (req, res) => {
   const _id = req.params.id;
   try {
     const order = await findById(_id);
-    console.log(order);
     res.status(200).json({order});
   } catch (error) {
     res.status(error.statusCode || 500).json({...error});

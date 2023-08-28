@@ -21,19 +21,20 @@ app.use(
 );
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "dist/user-interface")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist/index.html"));
-});
 
-app.use("/products", productRouter);
-app.use("/users", userRouter);
-app.use("/orders", orderRouter);
-app.use("/callback", paymentCallbackRouter);
-app.use("/cart", cartRouter);
+app.use("/api/products", productRouter);
+app.use("/api/users", userRouter);
+app.use("/api/orders", orderRouter);
+app.use("/api/callback", paymentCallbackRouter);
+app.use("/api/cart", cartRouter);
 // app.use("/paymentWebhook", require("./PaymentWebhook"));
 
 app.listen(port, () => {
   console.log(`server is listening on port ${port}`);
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist/user-interface/index.html"));
 });
 
 const addSuperUser = async () => {

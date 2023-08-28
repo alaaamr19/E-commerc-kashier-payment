@@ -24,7 +24,6 @@ router.get("/", async (req, res) => {
     const pager = paginate(products.length, page);
 
     const productsPage = products.slice(pager.startIndex, pager.endIndex + 1);
-
     res.json({productsPage, pager});
   } catch (error) {
     res.status(500).send(error);
