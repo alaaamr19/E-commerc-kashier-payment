@@ -16,7 +16,7 @@ This repository contains an Express project with several routers for user, produ
  WEBHOOK_URL="http://localhost:3000/paymentWebhook"
  MODE="test" 
  MID="your-mid" 
- APP_URL="http://localhost:3000"
+ APP_URL="http://localhost:4200" // 4200 is the port of the angular server. in case of running both (frontend- backend) on the same server, the port will be the same "ex:3000"
    ```
 4. Install the project dependencies:
   ```sh
